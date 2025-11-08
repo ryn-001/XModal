@@ -61,8 +61,8 @@ export default function App() {
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
           open={open}
+          closeAfterTransition={false}
           onClose={handleClose}
-          closeAfterTransition
           slots={{ backdrop: Backdrop }}
           slotProps={{
             backdrop: {
