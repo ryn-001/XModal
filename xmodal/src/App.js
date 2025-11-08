@@ -41,12 +41,12 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (data.phno.length < 10){
+    if (data.phno.length < 10) {
       alert('Invalid Phone Number. Please enter a 10-digit phone number.');
       return;
     }
 
-    if((new Date(data.dob)).getTime() > (new Date()).getTime()){
+    if ((new Date(data.dob)).getTime() > (new Date()).getTime()) {
       alert('Invalid date of birth. Date of birth cannot be in the future.')
       return;
     }
@@ -74,21 +74,23 @@ export default function App() {
             <Box sx={style}>
               <h3>Fill Details</h3>
 
-              <form onSubmit={handleSubmit}>
-                <label htmlFor='username'>Username:</label>
-                <input type='text' placeholder='Enter your username' id='username' name='username' value={data.username} onChange={handleChange} required /> <br/>
+              <div className='modal-content'>
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor='username'>Username:</label>
+                  <input type='text' placeholder='Enter your username' id='username' name='username' value={data.username} onChange={handleChange} required /> <br />
 
-                <label htmlFor='email-id'>Email Address:</label>
-                <input type='email' placeholder='Enter your Email Address' id='email' name='email' value={data.email} onChange={handleChange} required /> <br/>
+                  <label htmlFor='email-id'>Email Address:</label>
+                  <input type='email' placeholder='Enter your Email Address' id='email' name='email' value={data.email} onChange={handleChange} required /> <br />
 
-                <label htmlFor='ph-no'>Phone Address:</label>
-                <input type='number' placeholder='Enter your phone number' id='ph-no' name='phno' value={data.phno} onChange={handleChange} /> <br/>
+                  <label htmlFor='ph-no'>Phone Address:</label>
+                  <input type='number' placeholder='Enter your phone number' id='ph-no' name='phno' value={data.phno} onChange={handleChange} /> <br />
 
-                <label htmlFor='dob'>Date of Birth:</label>
-                <input type='date' id='dob' name='dob' value={data.dob} onChange={handleChange} /> <br/>
+                  <label htmlFor='dob'>Date of Birth:</label>
+                  <input type='date' id='dob' name='dob' value={data.dob} onChange={handleChange} /> <br />
 
-                <button>Submit</button>
-              </form>
+                  <button className='submit-button'>Submit</button>
+                </form>
+              </div>
             </Box>
           </Fade>
         </Modal>
