@@ -79,14 +79,14 @@ export default function App() {
                 <input type='text' placeholder='Enter your username' id='username' name='username' value={data.username} onChange={handleChange} required /> <br/>
 
                 <label htmlFor='email-id'>Email Address:</label>
-                <input type='email' placeholder='Enter your Email Address' id='email-id' name='email' value={data.email} onChange={handleChange} required /> <br/>
+                <input type='email' placeholder='Enter your Email Address' id='email' name='email' value={data.email} onChange={handleChange} required /> <br/>
 
                 <label htmlFor='ph-no'>Phone Address:</label>
                 <input type='number' placeholder='Enter your phone number' id='ph-no' name='phno' value={data.phno} onChange={handleChange} /> <br/>
 
                 <label htmlFor='dob'>Date of Birth:</label>
                 <input type='date' id='dob' name='dob' value={data.dob} onChange={handleChange} /> <br/>
-                
+
                 <button>Submit</button>
               </form>
             </Box>
