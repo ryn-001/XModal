@@ -63,6 +63,12 @@ export default function App() {
           open={open}
           onClose={handleClose}
           closeAfterTransition
+          slots={{ backdrop: Backdrop }}
+          slotProps={{
+            backdrop: {
+              timeout: 0,
+            },
+          }}
         >
           <Fade in={open}>
             <Box sx={style}>
