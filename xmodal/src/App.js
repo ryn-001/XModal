@@ -70,7 +70,7 @@ export default function App() {
             },
           }}
         >
-          <Fade in={open}>
+      
             <Box sx={style}>
               <h3>Fill Details</h3>
 
@@ -92,7 +92,6 @@ export default function App() {
                 </form>
               </div>
             </Box>
-          </Fade>
         </Modal>
       </div>
     </div>
