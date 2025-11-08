@@ -38,7 +38,6 @@ export default function App() {
   };
 
   return (
-    <div className="modal">
       <div className="modal-content">
         <h1>User Detail Modal</h1>
         <button onClick={handleOpen}>Open Form</button>
@@ -47,7 +46,7 @@ export default function App() {
           <div className="overlay" onClick={handleClose}>
             <div
               className="custom-modal"
-              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+              onClick={(e) => e.stopPropagation()} 
             >
               <h3>Fill Details</h3>
               <form onSubmit={handleSubmit}>
@@ -104,6 +103,5 @@ export default function App() {
           </div>
         )}
       </div>
-    </div>
   );
 }
