@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="modal">
+    <div className={open ? "modal" : "not-modal"}>
       <div className="modal-content">
         <h1>User Detail Modal</h1>
         <button onClick={handleOpen}>Open Form</button>
