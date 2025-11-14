@@ -43,7 +43,7 @@ export default function App() {
       <button onClick={handleOpen} className="open-form">Open Form</button>
 
       {open && (
-        <div className="modal">
+        <div className="modal" onClick={handleClose}>
           <div className="modal-content">
             <div className="overlay" onClick={handleClose}>
               <div
