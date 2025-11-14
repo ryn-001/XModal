@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function App() {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => setOpen(!open);
   const handleClose = () => setOpen(false);
 
   const [data, setData] = useState({
@@ -38,72 +38,74 @@ export default function App() {
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h1>User Detail Modal</h1>
-        <button onClick={handleOpen}>Open Form</button>
+    <div className="App">
+      <h1>User Detail Modal</h1>
+      <button onClick={handleOpen} className="open-form">Open Form</button>
 
-        {open && (
-          <div className="overlay" onClick={handleClose}>
-            <div
-              className="custom-modal"
-              onClick={(e) => e.stopPropagation()} 
-            >
-              <h3>Fill Details</h3>
-              <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <input
-                  type="text"
-                  placeholder="Enter your username"
-                  id="username"
-                  name="username"
-                  value={data.username}
-                  onChange={handleChange}
-                  required
-                />
-                <br />
+      {open && (
+        <div className="modal">
+          <div className="modal-content">
+            <div className="overlay" onClick={handleClose}>
+              <div
+                className="custom-modal"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3>Fill Details</h3>
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor="username">Username:</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your username"
+                    id="username"
+                    name="username"
+                    value={data.username}
+                    onChange={handleChange}
+                    required
+                  />
+                  <br />
 
-                <label htmlFor="email">Email Address:</label>
-                <input
-                  type="email"
-                  placeholder="Enter your Email Address"
-                  id="email"
-                  name="email"
-                  value={data.email}
-                  onChange={handleChange}
-                  required
-                />
-                <br />
+                  <label htmlFor="email">Email Address:</label>
+                  <input
+                    type="email"
+                    placeholder="Enter your Email Address"
+                    id="email"
+                    name="email"
+                    value={data.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <br />
 
-                <label htmlFor="phone">Phone Number:</label>
-                <input
-                  type="number"
-                  placeholder="Enter your phone number"
-                  id="phone"
-                  name="phno"
-                  value={data.phno}
-                  onChange={handleChange}
-                />
-                <br />
+                  <label htmlFor="phone">Phone Number:</label>
+                  <input
+                    type="number"
+                    placeholder="Enter your phone number"
+                    id="phone"
+                    name="phno"
+                    value={data.phno}
+                    onChange={handleChange}
+                  />
+                  <br />
 
-                <label htmlFor="dob">Date of Birth:</label>
-                <input
-                  type="date"
-                  id="dob"
-                  name="dob"
-                  value={data.dob}
-                  onChange={handleChange}
-                />
-                <br />
+                  <label htmlFor="dob">Date of Birth:</label>
+                  <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    value={data.dob}
+                    onChange={handleChange}
+                  />
+                  <br />
 
-                <button className="submit-button" type="submit">
-                  Submit
-                </button>
-              </form>
+                  <button className="submit-button" type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
